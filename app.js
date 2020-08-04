@@ -24,11 +24,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 
-Issuer.discover('https://nodejs-sample.criipto.id')
+Issuer.discover('http://localhost:3100')
   .then(criiptoIssuer => {
     var client = new criiptoIssuer.Client({
-      client_id: 'urn:criipto:nodejs:demo:1010',
-      client_secret: 'j9wYVyD3zXZPMo3LTq/xSU/sMu9/shiFKpTHKfqAutM=',
+      client_id: 'stupid_client',
+      client_secret: 'stupid_secret',
       redirect_uris: [ 'http://localhost:3000/auth/callback' ],
       post_logout_redirect_uris: [ 'http://localhost:3000/logout/callback' ],
       token_endpoint_auth_method: 'client_secret_post'
